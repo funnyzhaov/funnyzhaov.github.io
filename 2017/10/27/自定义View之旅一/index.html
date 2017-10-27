@@ -101,16 +101,18 @@
 <meta property="og:site_name" content="Mr.Zhao">
 <meta property="og:description" content="一、必须要理解的知识1.自定义View分类：  重写View 重写系统组件 重写Layout  2.自定义View的流程（哪些部分）：  至少重写两个构造方法（一个在new对象时调用，一个在xml布局中声明时调用） onMeasure onLayout onDraw AttributeSet 对外接口">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1986743-e363f05ed14745b0.png?imageMogr2/auto-orient/strip">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1986743-151affd153a26065.png!thumbnail?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1986743-819913dcbbad218d.png!thumbnail?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1986743-e278f23c3d00e647.png!thumbnail?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1986743-e9f4607cc8a56216.png?imageMogr2/auto-orient/strip">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1986743-8adb0a149c1315f3.png!thumbnail?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1986743-50372635dcc06f46.png!thumbnail?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-10-27T15:54:49.107Z">
+<meta property="og:updated_time" content="2017-10-27T16:29:56.498Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="自定义View之旅一">
 <meta name="twitter:description" content="一、必须要理解的知识1.自定义View分类：  重写View 重写系统组件 重写Layout  2.自定义View的流程（哪些部分）：  至少重写两个构造方法（一个在new对象时调用，一个在xml布局中声明时调用） onMeasure onLayout onDraw AttributeSet 对外接口">
-<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1986743-151affd153a26065.png!thumbnail?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1986743-e363f05ed14745b0.png?imageMogr2/auto-orient/strip">
 
 
 
@@ -368,7 +370,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  1,013
+                  1,009
                 </span>
               
 
@@ -438,8 +440,8 @@
 <p>此时拿到的widthSize并不是View最终的大小，而是父View提供的参考大小,因此需要我们重新测量。</p>
 <ul>
 <li>测量模式详解</li>
+<li><img src="http://upload-images.jianshu.io/upload_images/1986743-e363f05ed14745b0.png?imageMogr2/auto-orient/strip" alt="img"></li>
 </ul>
-<p>image.png</p>
 <ul>
 <li>测量模式与wrap_content、match_parent 的关系</li>
 </ul>
@@ -463,7 +465,7 @@
 <p>显示效果：</p>
 <p><img src="http://upload-images.jianshu.io/upload_images/1986743-e278f23c3d00e647.png!thumbnail?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="img"></p>
 <p>此时显示的正方形、宽高均为默认值100,说明此时的测量模式为AT_MOST.<br>总结如下：</p>
-<p>image.png</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1986743-e9f4607cc8a56216.png?imageMogr2/auto-orient/strip" alt="img"></p>
 <p><strong>onDraw()</strong></p>
 <p>搞清楚了测量，接下来就是具体的绘制操作了。</p>
 <p>我们不妨接着上述的例子往下做、让当前View上显示一个圆形：</p>
