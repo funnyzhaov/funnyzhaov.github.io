@@ -108,7 +108,7 @@
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1986743-e9f4607cc8a56216.png?imageMogr2/auto-orient/strip">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1986743-8adb0a149c1315f3.png!thumbnail?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1986743-50372635dcc06f46.png!thumbnail?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-10-27T16:29:56.498Z">
+<meta property="og:updated_time" content="2017-10-27T16:32:37.149Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="自定义View之旅一">
 <meta name="twitter:description" content="一、必须要理解的知识1.自定义View分类：  重写View 重写系统组件 重写Layout  2.自定义View的流程（哪些部分）：  至少重写两个构造方法（一个在new对象时调用，一个在xml布局中声明时调用） onMeasure onLayout onDraw AttributeSet 对外接口">
@@ -439,8 +439,9 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">int widthMode = MeasureSpec.getMode(widthMeasureSpec);</div><div class="line">int widthSize = MeasureSpec.getSize(widthMeasureSpec);</div></pre></td></tr></table></figure>
 <p>此时拿到的widthSize并不是View最终的大小，而是父View提供的参考大小,因此需要我们重新测量。</p>
 <ul>
-<li>测量模式详解</li>
-<li><img src="http://upload-images.jianshu.io/upload_images/1986743-e363f05ed14745b0.png?imageMogr2/auto-orient/strip" alt="img"></li>
+<li><p>测量模式详解</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1986743-e363f05ed14745b0.png?imageMogr2/auto-orient/strip" alt="img"></p>
+</li>
 </ul>
 <ul>
 <li>测量模式与wrap_content、match_parent 的关系</li>
