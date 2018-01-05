@@ -93,18 +93,18 @@
 
 
 
-<meta name="description" content="Paint概述Paint是绘制中的核心，这个说法一点也不为过。 Paint的API大致可以分为4类：  颜色 效果 drawText()等 初始化  这篇就记录下颜色这块的知识点。 图像间作用效果Paint设置颜色有两种方式:setColor()、setShader() Shader 着色器解释：可以对图像在基本颜色上的处理上添加效果 Shader实现的子类 1LinearGradient   R">
+<meta name="description" content="Paint概述Paint是绘制中的核心，这个说法一点也不为过。 Paint的API大致可以分为4类：  颜色 效果 drawText()等 初始化  这篇就记录下颜色这块的知识点。 图像间作用效果Paint设置颜色有两种方式:setColor()、setShader() Shader 着色器解释：可以对图像在基本颜色上的处理上添加效果">
 <meta name="keywords" content="-Android">
 <meta property="og:type" content="article">
 <meta property="og:title" content="自定View之-Paint">
 <meta property="og:url" content="http://funnyzhao.me/2018/01/05/自定View之-Paint/index.html">
 <meta property="og:site_name" content="Mr.Zhao">
-<meta property="og:description" content="Paint概述Paint是绘制中的核心，这个说法一点也不为过。 Paint的API大致可以分为4类：  颜色 效果 drawText()等 初始化  这篇就记录下颜色这块的知识点。 图像间作用效果Paint设置颜色有两种方式:setColor()、setShader() Shader 着色器解释：可以对图像在基本颜色上的处理上添加效果 Shader实现的子类 1LinearGradient   R">
+<meta property="og:description" content="Paint概述Paint是绘制中的核心，这个说法一点也不为过。 Paint的API大致可以分为4类：  颜色 效果 drawText()等 初始化  这篇就记录下颜色这块的知识点。 图像间作用效果Paint设置颜色有两种方式:setColor()、setShader() Shader 着色器解释：可以对图像在基本颜色上的处理上添加效果">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-05T08:58:19.790Z">
+<meta property="og:updated_time" content="2018-01-05T09:02:18.874Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="自定View之-Paint">
-<meta name="twitter:description" content="Paint概述Paint是绘制中的核心，这个说法一点也不为过。 Paint的API大致可以分为4类：  颜色 效果 drawText()等 初始化  这篇就记录下颜色这块的知识点。 图像间作用效果Paint设置颜色有两种方式:setColor()、setShader() Shader 着色器解释：可以对图像在基本颜色上的处理上添加效果 Shader实现的子类 1LinearGradient   R">
+<meta name="twitter:description" content="Paint概述Paint是绘制中的核心，这个说法一点也不为过。 Paint的API大致可以分为4类：  颜色 效果 drawText()等 初始化  这篇就记录下颜色这块的知识点。 图像间作用效果Paint设置颜色有两种方式:setColor()、setShader() Shader 着色器解释：可以对图像在基本颜色上的处理上添加效果">
 
 
 
@@ -407,6 +407,7 @@
 <p>这篇就记录下颜色这块的知识点。</p>
 <h4 id="图像间作用效果"><a href="#图像间作用效果" class="headerlink" title="图像间作用效果"></a>图像间作用效果</h4><p>Paint设置颜色有两种方式:setColor()、setShader()</p>
 <h5 id="Shader-着色器"><a href="#Shader-着色器" class="headerlink" title="Shader 着色器"></a>Shader 着色器</h5><p>解释：可以对图像在基本颜色上的处理上添加效果</p>
+<a id="more"></a>
 <p><strong>Shader实现的子类</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">LinearGradient   RadialGradient    SweepGradient  BitmapShader  ComposeShader</div></pre></td></tr></table></figure>
 <p><strong>LinearGradinet</strong></p>
