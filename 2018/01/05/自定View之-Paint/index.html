@@ -101,7 +101,7 @@
 <meta property="og:site_name" content="Mr.Zhao">
 <meta property="og:description" content="Paint概述Paint是绘制中的核心，这个说法一点也不为过。 Paint的API大致可以分为4类：  颜色 效果 drawText()等 初始化  这篇就记录下颜色这块的知识点。 图像间作用效果Paint设置颜色有两种方式:setColor()、setShader() Shader 着色器解释：可以对图像在基本颜色上的处理上添加效果">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-05T11:47:44.493Z">
+<meta property="og:updated_time" content="2018-01-05T11:53:19.932Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="自定View之-Paint">
 <meta name="twitter:description" content="Paint概述Paint是绘制中的核心，这个说法一点也不为过。 Paint的API大致可以分为4类：  颜色 效果 drawText()等 初始化  这篇就记录下颜色这块的知识点。 图像间作用效果Paint设置颜色有两种方式:setColor()、setShader() Shader 着色器解释：可以对图像在基本颜色上的处理上添加效果">
@@ -362,7 +362,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  924
+                  913
                 </span>
               
 
@@ -444,7 +444,68 @@
 <p><strong>ComposeShader</strong></p>
 <p>混合着色器,把两个shader混合使用</p>
 <p>构造方法</p>
-<figure class="highlight plain"><figcaption><span>shaderA,Shader shaderB,ProterDuff.Mode mode)```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">mode:两个Shader的叠加模式</div><div class="line"></div><div class="line">*ps：如果两个shader相同，需要关闭硬件加速才能看到效果,在AndroidManifest.xml中声明 hardwaeAccelerated=false*</div><div class="line"></div><div class="line">**ProterDuff.Mode **</div><div class="line"></div><div class="line">是一个enum值，表示不同的shader结合方法</div><div class="line"></div><div class="line">- SRC_OVER:覆盖叠加</div><div class="line"></div><div class="line"></div><div class="line">- DST_OUT:挖空效果</div><div class="line"></div><div class="line"></div><div class="line">- ...</div><div class="line"></div><div class="line">ProterDuff.Mode效果有17个，分为两类</div><div class="line"></div><div class="line">1.合成</div><div class="line"></div><div class="line">2.混合</div><div class="line"></div><div class="line">查阅文档：(文档中包含图片结合效果)</div><div class="line"></div><div class="line">[https://developer.android.google.cn/reference/android/graphics/PorterDuff.Mode.html](https://developer.android.google.cn/reference/android/graphics/PorterDuff.Mode.html)</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">#### ColorFilter</div><div class="line"></div><div class="line">来给图像颜色设置第二层过滤效果</div><div class="line"></div><div class="line">1. LightingColorFilter 光照效果  通过改变RGB的值来加减光照的感觉</div><div class="line"></div><div class="line"></div><div class="line">1. PorterDuffColorFilter  通过颜色来设置和图像的结合效果，参考图像结合方式</div><div class="line"></div><div class="line"></div><div class="line">1. ColorMatrixColorFilter 颜色矩阵  可以把要绘制的像素进行转换,大概就是设置饱和度的</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">#### setXfermode() </div><div class="line"></div><div class="line">Paint最后一层处理颜色的方法,处理颜色遇上View的问题</div><div class="line"></div><div class="line">Xfermode指你要绘制的内容和Cavas的目标位置内容应该怎样结合计算出最终的颜色</div><div class="line"></div><div class="line">使用Xfemode绘制的内容为源图像src、view中已有的内容作为目标图像dst.</div><div class="line"></div><div class="line">##### ProterDuff.Mode在Paint中一共有三处用到，它们的工作原理一样，用途不同</div><div class="line"></div><div class="line">| API                   |             用途             |      |</div><div class="line">| --------------------- | :------------------------: | ---: |</div><div class="line">| ComposeShader         |         混合两个Shader         |      |</div><div class="line">| PorterDuffColorFilter | 增加一个单色的ColorFilterXfermode |      |</div><div class="line">| Xfermode              |  设置绘制内容和View中已有内容的混合计算方式   |      |</div><div class="line"></div><div class="line">##### Xfermode使用</div><div class="line"></div><div class="line">1.创建子类PorterDuffXfermode</div><div class="line"></div><div class="line">2.注意点</div><div class="line"></div><div class="line">**使用离屏缓冲(Off-screen Buffer)(两种方式)**</div><div class="line"></div><div class="line">第一种： Canvas.saveLayer() 可以做短时的离屏缓冲</div><div class="line"></div><div class="line">```java</div><div class="line"> //绘制之前保存</div><div class="line"> int saved = canvas.saveLayer(null, null, Canvas.ALL_SAVE_FLAG);</div><div class="line"> canvas.drawBitmap(rectBitmap, 0, 0, paint); // 画方</div><div class="line"> paint.setXfermode(xfermode); // 设置 Xfermode</div><div class="line"> canvas.drawBitmap(circleBitmap, 0, 0, paint); // 画圆</div><div class="line"> paint.setXfermode(null); // 用完及时清除 Xfermode</div><div class="line"> //绘制之后恢复</div><div class="line"> canvas.restoreToCount(saved);</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ComposeShader(Shader shaderA,Shader shaderB,ProterDuff.Mode mode)</div></pre></td></tr></table></figure>
+<p>mode:两个Shader的叠加模式</p>
+<p><em>ps：如果两个shader相同，需要关闭硬件加速才能看到效果,在AndroidManifest.xml中声明 hardwaeAccelerated=false</em></p>
+<p><strong>ProterDuff.Mode </strong></p>
+<p>是一个enum值，表示不同的shader结合方法</p>
+<ul>
+<li>SRC_OVER:覆盖叠加</li>
+</ul>
+<ul>
+<li>DST_OUT:挖空效果</li>
+</ul>
+<ul>
+<li>…</li>
+</ul>
+<p>ProterDuff.Mode效果有17个，分为两类</p>
+<p>1.合成</p>
+<p>2.混合</p>
+<p>查阅文档：(文档中包含图片结合效果)</p>
+<p><a href="https://developer.android.google.cn/reference/android/graphics/PorterDuff.Mode.html" target="_blank" rel="external">https://developer.android.google.cn/reference/android/graphics/PorterDuff.Mode.html</a></p>
+<h4 id="ColorFilter"><a href="#ColorFilter" class="headerlink" title="ColorFilter"></a>ColorFilter</h4><p>来给图像颜色设置第二层过滤效果</p>
+<ol>
+<li>LightingColorFilter 光照效果  通过改变RGB的值来加减光照的感觉</li>
+</ol>
+<ol>
+<li>PorterDuffColorFilter  通过颜色来设置和图像的结合效果，参考图像结合方式</li>
+</ol>
+<ol>
+<li>ColorMatrixColorFilter 颜色矩阵  可以把要绘制的像素进行转换,大概就是设置饱和度的</li>
+</ol>
+<h4 id="setXfermode"><a href="#setXfermode" class="headerlink" title="setXfermode()"></a>setXfermode()</h4><p>Paint最后一层处理颜色的方法,处理颜色遇上View的问题</p>
+<p>Xfermode指你要绘制的内容和Cavas的目标位置内容应该怎样结合计算出最终的颜色</p>
+<p>使用Xfemode绘制的内容为源图像src、view中已有的内容作为目标图像dst.</p>
+<h5 id="ProterDuff-Mode在Paint中一共有三处用到，它们的工作原理一样，用途不同"><a href="#ProterDuff-Mode在Paint中一共有三处用到，它们的工作原理一样，用途不同" class="headerlink" title="ProterDuff.Mode在Paint中一共有三处用到，它们的工作原理一样，用途不同"></a>ProterDuff.Mode在Paint中一共有三处用到，它们的工作原理一样，用途不同</h5><table>
+<thead>
+<tr>
+<th>API</th>
+<th style="text-align:center">用途</th>
+<th style="text-align:right"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ComposeShader</td>
+<td style="text-align:center">混合两个Shader</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td>PorterDuffColorFilter</td>
+<td style="text-align:center">增加一个单色的ColorFilterXfermode</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td>Xfermode</td>
+<td style="text-align:center">设置绘制内容和View中已有内容的混合计算方式</td>
+</tr>
+</tbody>
+</table>
+<h5 id="Xfermode使用"><a href="#Xfermode使用" class="headerlink" title="Xfermode使用"></a>Xfermode使用</h5><p>1.创建子类PorterDuffXfermode</p>
+<p>2.注意点</p>
+<p><strong>使用离屏缓冲(Off-screen Buffer)(两种方式)</strong></p>
+<p>第一种： Canvas.saveLayer() 可以做短时的离屏缓冲</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//绘制之前保存</span></div><div class="line"><span class="keyword">int</span> saved = canvas.saveLayer(<span class="keyword">null</span>, <span class="keyword">null</span>, Canvas.ALL_SAVE_FLAG);</div><div class="line">canvas.drawBitmap(rectBitmap, <span class="number">0</span>, <span class="number">0</span>, paint); <span class="comment">// 画方</span></div><div class="line">paint.setXfermode(xfermode); <span class="comment">// 设置 Xfermode</span></div><div class="line">canvas.drawBitmap(circleBitmap, <span class="number">0</span>, <span class="number">0</span>, paint); <span class="comment">// 画圆</span></div><div class="line">paint.setXfermode(<span class="keyword">null</span>); <span class="comment">// 用完及时清除 Xfermode</span></div><div class="line"><span class="comment">//绘制之后恢复</span></div><div class="line">canvas.restoreToCount(saved);</div></pre></td></tr></table></figure>
 <p>第一种：setLayerType</p>
 <p>View.setLayerType()是直接把整个View都绘制在离屏缓冲中</p>
 <p>setLayerType(LAYER_TYPE_HARDWARE)使用GPU来缓冲</p>
@@ -662,7 +723,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Paint"><span class="nav-number">1.</span> <span class="nav-text">Paint</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#概述"><span class="nav-number">1.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#图像间作用效果"><span class="nav-number">1.2.</span> <span class="nav-text">图像间作用效果</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Shader-着色器"><span class="nav-number">1.2.1.</span> <span class="nav-text">Shader 着色器</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Paint"><span class="nav-number">1.</span> <span class="nav-text">Paint</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#概述"><span class="nav-number">1.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#图像间作用效果"><span class="nav-number">1.2.</span> <span class="nav-text">图像间作用效果</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Shader-着色器"><span class="nav-number">1.2.1.</span> <span class="nav-text">Shader 着色器</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ColorFilter"><span class="nav-number">1.3.</span> <span class="nav-text">ColorFilter</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#setXfermode"><span class="nav-number">1.4.</span> <span class="nav-text">setXfermode()</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#ProterDuff-Mode在Paint中一共有三处用到，它们的工作原理一样，用途不同"><span class="nav-number">1.4.1.</span> <span class="nav-text">ProterDuff.Mode在Paint中一共有三处用到，它们的工作原理一样，用途不同</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Xfermode使用"><span class="nav-number">1.4.2.</span> <span class="nav-text">Xfermode使用</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
